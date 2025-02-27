@@ -22,9 +22,14 @@ const LoginModal = ({ isOpen, onClose, onSignIn }) => {
             className="w-full py-2 px-4 bg-gray-500 text-white rounded hover:bg-gray-600">
             그냥 로그인
           </button>
-          <button className="w-full py-2 px-4 bg-red-500 text-white rounded hover:bg-red-600">
+          <a
+            href={`${process.env.REACT_APP_API_BASE_URL}/oauth2/authorization/google`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full py-2 px-4 bg-red-500 text-white rounded hover:bg-red-600 block text-center"
+          >
             Google 로그인
-          </button>
+          </a>
           <button className="w-full py-2 px-4 bg-blue-700 text-white rounded hover:bg-blue-800">
             Facebook 로그인
           </button>

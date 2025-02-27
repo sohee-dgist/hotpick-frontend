@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import LoginModal from '../components/LoginModal';
 import KeywordModal from '../components/KeywordModal'
 import deals from '../data/deals';
+import hotDealsData from '../data/hotDealsData'
 import Search from '../pages/Search';
-import { Button, Checkbox } from 'antd';
+import { Checkbox } from 'antd';
 
 function Home() {
   
@@ -22,6 +23,7 @@ function Home() {
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
   const currentDeals = sortedDeals.slice(indexOfFirstPost, indexOfLastPost);
+  const currentDeals2 = hotDealsData.data;
 
   // 페이지
   const groupSize = 10;
@@ -81,10 +83,49 @@ function Home() {
               </button>
             </div>
           </div>
-            <Checkbox className="pr-1" checked={isSearchCheckbox} onChange={handleCheckboxChange}/>검색
+            <Checkbox className="pr-1" checked={isSearchCheckbox} onChange={handleCheckboxChange}/>검색 *정렬방식으로 바꿀예정
           {isSearchCheckbox ? (<div><Search/></div>) : (<div></div>)}
-          
-          {currentDeals.map((deal) => (
+          {/* {hotdeals.map((deal) => (
+            <div>
+              <p>{deal.id}</p>
+            </div>
+
+          ))} */}
+          {currentDeals2.map((deal) => (
+            <a
+              key={deal.id}
+              href={deal.sourceUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block mb-4"
+            >
+              <div className="flex p-4 bg-gray-50 rounded shadow mb-4 cursor-pointer hover:bg-gray-100">
+                <div className="w-1/3 sm:w-32">
+                  <img
+                    src={deal.thumbnailUrl} 
+                    alt="썸네일"
+                    className="w-full h-auto rounded-lg object-cover"
+                  />
+                </div>
+                <div className="flex-1 pl-4">
+                  <div className="flex space-x-1 items-center">
+                    <p className="px-[5px] bg-red-500 rounded text-sm text-white mb-1">
+                      {deal.sourceSite}
+                    </p>
+                    <p className="px-[5px] bg-blue-500 rounded text-sm text-white mb-1">
+                      {deal.salesSite}
+                    </p>
+                  </div>
+                  <h2 className="text-xl font-bold">{deal.title}</h2>
+                  <p className="text-lg text-gray-700">
+                    가격: {deal.price} {deal.currency}
+                  </p>
+                </div>
+              </div>
+            </a>
+          ))}
+
+          {/* {currentDeals.map((deal) => (
             <a
               key={deal.id}
               href={deal.dealLink}
@@ -92,7 +133,6 @@ function Home() {
               rel="noopener noreferrer"
             >
               <div className="flex p-4 bg-gray-50 rounded shadow mb-4 cursor-pointer hover:bg-gray-100" >
-                {/* 왼쪽 썸네일 영역 */}
                 <div className="w-1/3 sm:w-32">
                   <img
                     src={deal.thumbnail}
@@ -100,7 +140,6 @@ function Home() {
                     className="w-full h-auto rounded object-cover"
                   />
                 </div>
-                {/* 오른쪽 상세 정보 영역 */}
                 <div className="flex-1 pl-4">
                   <div className="flex space-x-1 items-center">
                     <p className="px-[5px] bg-red-500 rounded text-sm text-white mb-1">{deal.hotDealSite}</p>
@@ -115,7 +154,8 @@ function Home() {
                 </div>
               </div>
             </a>
-          ))}
+          ))} */}
+
           {/* 페이지네이션 */}
           <div className="flex justify-center items-center space-x-2 mt-4">
             {/* 처음 버튼 */}
