@@ -32,3 +32,5 @@ const pagination = {
     "totalElements": 2,
     "count": 2
   }
+
+  export default pagination;

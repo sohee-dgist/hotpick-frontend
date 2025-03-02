@@ -9,3 +9,5 @@ const categories = {
     ],
     "count": 1
   }
+
+  export default categories;

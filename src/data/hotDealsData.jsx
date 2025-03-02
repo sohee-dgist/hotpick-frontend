@@ -1,6 +1,32 @@
 const hotDealsData = {
     "data": [
       {
+        "id": 1,
+        "categoryId": 2,
+        "title": "[알리] USB 범용 리튬 배터리 충전기 1 슬롯 (코인필요)",
+        "price": 0.03,
+        "currency": "USD",
+        "thumbnailUrl": "/thumb/0.png",
+        "sourceUrl": "https://quasarzone.com/bbs/qb_saleinfo/views/1753653",
+        "sourceSite": "QUASARZONE",
+        "salesSite": "ALIEXPRESS",
+        "createdAt": "2025-02-15T20:45:51.581371",
+        "lastModifiedAt": null
+      },
+      {
+        "id": 2,
+        "categoryId": 2,
+        "title": "[네이버] 삼성 갤럭시버즈3 (96,670원/무배)",
+        "price": 96670,
+        "currency": "KRW",
+        "thumbnailUrl": "/thumb/1.jpg",
+        "sourceUrl": "https://quasarzone.com/bbs/qb_saleinfo/views/1753568",
+        "sourceSite": "QUASARZONE",
+        "salesSite": "NAVER",
+        "createdAt": "2025-02-15T20:45:51.581371",
+        "lastModifiedAt": null
+      },
+      {
         "id": 3,
         "categoryId": 2,
         "title": "[알리] USB 범용 리튬 배터리 충전기 1 슬롯 (코인필요)",
@@ -25,12 +51,149 @@ const hotDealsData = {
         "salesSite": "NAVER",
         "createdAt": "2025-02-15T20:45:51.581371",
         "lastModifiedAt": null
-      }
+      },{
+        "id": 5,
+        "categoryId": 2,
+        "title": "[알리] USB 범용 리튬 배터리 충전기 1 슬롯 (코인필요)",
+        "price": 0.03,
+        "currency": "USD",
+        "thumbnailUrl": "/thumb/0.png",
+        "sourceUrl": "https://quasarzone.com/bbs/qb_saleinfo/views/1753653",
+        "sourceSite": "QUASARZONE",
+        "salesSite": "ALIEXPRESS",
+        "createdAt": "2025-02-15T20:45:51.581371",
+        "lastModifiedAt": null
+      },
+      {
+        "id": 6,
+        "categoryId": 2,
+        "title": "[네이버] 삼성 갤럭시버즈3 (96,670원/무배)",
+        "price": 96670,
+        "currency": "KRW",
+        "thumbnailUrl": "/thumb/1.jpg",
+        "sourceUrl": "https://quasarzone.com/bbs/qb_saleinfo/views/1753568",
+        "sourceSite": "QUASARZONE",
+        "salesSite": "NAVER",
+        "createdAt": "2025-02-15T20:45:51.581371",
+        "lastModifiedAt": null
+      },{
+        "id": 7,
+        "categoryId": 2,
+        "title": "[알리] USB 범용 리튬 배터리 충전기 1 슬롯 (코인필요)",
+        "price": 0.03,
+        "currency": "USD",
+        "thumbnailUrl": "/thumb/0.png",
+        "sourceUrl": "https://quasarzone.com/bbs/qb_saleinfo/views/1753653",
+        "sourceSite": "QUASARZONE",
+        "salesSite": "ALIEXPRESS",
+        "createdAt": "2025-02-15T20:45:51.581371",
+        "lastModifiedAt": null
+      },
+      {
+        "id": 8,
+        "categoryId": 2,
+        "title": "[네이버] 삼성 갤럭시버즈3 (96,670원/무배)",
+        "price": 96670,
+        "currency": "KRW",
+        "thumbnailUrl": "/thumb/1.jpg",
+        "sourceUrl": "https://quasarzone.com/bbs/qb_saleinfo/views/1753568",
+        "sourceSite": "QUASARZONE",
+        "salesSite": "NAVER",
+        "createdAt": "2025-02-15T20:45:51.581371",
+        "lastModifiedAt": null
+      },{
+        "id": 9,
+        "categoryId": 2,
+        "title": "[알리] USB 범용 리튬 배터리 충전기 1 슬롯 (코인필요)",
+        "price": 0.03,
+        "currency": "USD",
+        "thumbnailUrl": "/thumb/0.png",
+        "sourceUrl": "https://quasarzone.com/bbs/qb_saleinfo/views/1753653",
+        "sourceSite": "QUASARZONE",
+        "salesSite": "ALIEXPRESS",
+        "createdAt": "2025-02-15T20:45:51.581371",
+        "lastModifiedAt": null
+      },
+      {
+        "id": 10,
+        "categoryId": 2,
+        "title": "[네이버] 삼성 갤럭시버즈3 (96,670원/무배)",
+        "price": 96670,
+        "currency": "KRW",
+        "thumbnailUrl": "/thumb/1.jpg",
+        "sourceUrl": "https://quasarzone.com/bbs/qb_saleinfo/views/1753568",
+        "sourceSite": "QUASARZONE",
+        "salesSite": "NAVER",
+        "createdAt": "2025-02-15T20:45:51.581371",
+        "lastModifiedAt": null
+      },{
+        "id": 11,
+        "categoryId": 2,
+        "title": "[알리] USB 범용 리튬 배터리 충전기 1 슬롯 (코인필요)",
+        "price": 0.03,
+        "currency": "USD",
+        "thumbnailUrl": "/thumb/0.png",
+        "sourceUrl": "https://quasarzone.com/bbs/qb_saleinfo/views/1753653",
+        "sourceSite": "QUASARZONE",
+        "salesSite": "ALIEXPRESS",
+        "createdAt": "2025-02-15T20:45:51.581371",
+        "lastModifiedAt": null
+      },
+      {
+        "id": 12,
+        "categoryId": 2,
+        "title": "[네이버] 삼성 갤럭시버즈3 (96,670원/무배)",
+        "price": 96670,
+        "currency": "KRW",
+        "thumbnailUrl": "/thumb/1.jpg",
+        "sourceUrl": "https://quasarzone.com/bbs/qb_saleinfo/views/1753568",
+        "sourceSite": "QUASARZONE",
+        "salesSite": "NAVER",
+        "createdAt": "2025-02-15T20:45:51.581371",
+        "lastModifiedAt": null
+      },{
+        "id": 13,
+        "categoryId": 2,
+        "title": "[알리] USB 범용 리튬 배터리 충전기 1 슬롯 (코인필요)",
+        "price": 0.03,
+        "currency": "USD",
+        "thumbnailUrl": "/thumb/0.png",
+        "sourceUrl": "https://quasarzone.com/bbs/qb_saleinfo/views/1753653",
+        "sourceSite": "QUASARZONE",
+        "salesSite": "ALIEXPRESS",
+        "createdAt": "2025-02-15T20:45:51.581371",
+        "lastModifiedAt": null
+      },
+      {
+        "id": 14,
+        "categoryId": 2,
+        "title": "[네이버] 삼성 갤럭시버즈3 (96,670원/무배)",
+        "price": 96670,
+        "currency": "KRW",
+        "thumbnailUrl": "/thumb/1.jpg",
+        "sourceUrl": "https://quasarzone.com/bbs/qb_saleinfo/views/1753568",
+        "sourceSite": "QUASARZONE",
+        "salesSite": "NAVER",
+        "createdAt": "2025-02-15T20:45:51.581371",
+        "lastModifiedAt": null
+      },{
+        "id": 15,
+        "categoryId": 2,
+        "title": "[알리] USB 범용 리튬 배터리 충전기 1 슬롯 (코인필요)",
+        "price": 0.03,
+        "currency": "USD",
+        "thumbnailUrl": "/thumb/0.png",
+        "sourceUrl": "https://quasarzone.com/bbs/qb_saleinfo/views/1753653",
+        "sourceSite": "QUASARZONE",
+        "salesSite": "ALIEXPRESS",
+        "createdAt": "2025-02-15T20:45:51.581371",
+        "lastModifiedAt": null
+      },
     ],
     "page": 0,
-    "totalPages": 1,
-    "totalElements": 2,
-    "count": 2
+    "totalPages": 4,
+    "totalElements": 22,
+    "count": 15
   }
 
   export default hotDealsData;

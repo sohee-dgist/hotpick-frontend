@@ -1,29 +1,31 @@
+/* eslint-disable */
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import userInfo from '../data/userData'
 
 const AuthenticatedPage = () => {
+
+  // testMode
+  const [isTestMode, setIsTestMode] = useState(true);
+
   const navigate = useNavigate();
   const [loading, setLoading] = useState(true);
-  
+  const [errorMessage, setErrorMessage] = useState('');
+
   useEffect(() => {
     const fetchUserInfo = async () => {
       try {
-        // 예시로 사용자 정보를 가져오는 API 호출
-        const response = await axios.get('/api/user'); // 백엔드에 맞는 엔드포인트 사용
-        const userData = response.data;
-        
-        // userData가 존재하면 인증된 것으로 간주
-        if (userData && userData.id) {
-          // 인증된 사용자라면 메인 페이지로 리다이렉트
+        const userData = isTestMode ? userInfo.data : (await axios.get('/api/users/my')).data;
+
+        if (userData?.id) {
           navigate('/');
         } else {
-          // 사용자 정보가 없으면 로그인 페이지로 리다이렉트 또는 에러 처리
-          navigate('/login');
+          setErrorMessage('사용자 인증에 실패했습니다. 다시 로그인해 주세요.');
         }
       } catch (error) {
         console.error('사용자 정보 확인 중 오류 발생:', error);
-        navigate('/login'); // 에러 시 로그인 페이지로 이동
+        setErrorMessage('사용자 인증 중 오류가 발생했습니다. 다시 시도해 주세요.');
       } finally {
         setLoading(false);
       }
@@ -32,11 +34,17 @@ const AuthenticatedPage = () => {
     fetchUserInfo();
   }, [navigate]);
 
-  if (loading) {
-    return <div>사용자 정보를 확인 중입니다...</div>;
-  }
-  
-  return null;
+  if (loading) return <div>사용자 정보를 확인 중입니다...</div>;
+
+  return (
+    <div className="p-4">
+      {errorMessage ? (
+        <p className="text-red-500">{errorMessage}</p>
+      ) : (
+        <p className="text-green-500">인증 성공! 잠시 후 메인 화면으로 이동합니다.</p>
+      )}
+    </div>
+  );
 };
 
 export default AuthenticatedPage;
