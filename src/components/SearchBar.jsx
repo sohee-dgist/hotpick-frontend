@@ -3,13 +3,13 @@ import { Input, Button } from 'antd';
 
 const SearchBar = () => {
   return (
-    <div className="flex justify-center pb-3">
+    <div className="flex justify-center mb-4">
       <div className="relative w-4/6">
         <Input
           type="text"
           id="product"
           placeholder="상품명을 입력해주세요."
-          className="w-full border-2 border-blue-500 rounded-full p-4 pl-8 pr-24 focus:outline-none"
+          className="w-full border-2 border-blue-500 rounded-full p-4 pl-8 pr-24"
         />
         <Button
           type="ghost"

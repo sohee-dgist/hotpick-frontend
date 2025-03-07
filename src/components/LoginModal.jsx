@@ -30,7 +30,7 @@ const LoginModal = ({ isOpen, onClose, onSignIn }) => {
           >
             Google 로그인
           </a>
-          <button className="w-full py-2 px-4 bg-blue-700 text-white rounded hover:bg-blue-800">
+          {/* <button className="w-full py-2 px-4 bg-blue-700 text-white rounded hover:bg-blue-800">
             Facebook 로그인
           </button>
           <button className="w-full py-2 px-4 bg-rose-500 text-white rounded hover:bg-rose-600">
@@ -38,7 +38,7 @@ const LoginModal = ({ isOpen, onClose, onSignIn }) => {
           </button>
           <button className="w-full py-2 px-4 bg-sky-500 text-white rounded hover:bg-sky-600">
             Twitter 로그인
-          </button>
+          </button> */}
         </div>
       </div>
     </div>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import LoginModal from '../components/LoginModal';
-import KeywordModal from '../components/KeywordModal'
+import WatchwordModal from '../components/WatchwordModal'
 import Pagination from '../components/Pagination';
 import axios from 'axios';
 import hotDealsData from '../data/hotDealsData'
@@ -8,14 +8,25 @@ import LeftAds from '../components/LeftAds';
 import RightUserPanel from '../components/RightUserPanel';
 import SearchBar from '../components/SearchBar';
 import HotDealList from '../components/HotDealList';
+import { useSelector } from 'react-redux';
+import RecommendedCategories from '../components/RecommendedCategories'
 
 function Home() {
   
-  // test
-  const isTestMode = true;
+
+  // search api //
+  // categoris api // c
+  // 키워드 등록 post // c
+  // 상태관리(userInfo, testMode) // c 
+  // 다크모드 // 
+  // 키알조회 수정 삭제
+  // 내정보수정
+
+  // TestMode
+  const isTestMode = useSelector((state) => state.config.isTestMode);
 
   // 로그인 상태
-  const [isLoggedIn, setIsLoggedIn] = useState(true);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const handleSignIn = () => setIsLoggedIn(true);
   const handleSignOut = () => setIsLoggedIn(false);
 
@@ -27,18 +38,13 @@ function Home() {
   const ads = ["https://naver.com", "https://youtube.com"]
 
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
-  const [isKeywordModalOpen, setIsKeywordModalOpen] = useState(false);
+  const [isWatchwordModalOpen, setIsWatchwordModalOpen] = useState(false);
 
   const handleOpenLoginModal = () => setIsLoginModalOpen(true);
   const handleCloseLoginModal = () => setIsLoginModalOpen(false);
   
-  const handleOpenKeywordModal = () => setIsKeywordModalOpen(true);
-  const handleCloseKeywordModal = () => setIsKeywordModalOpen(false);
-
-  const [isSearchCheckbox, setIsSearchCheckbox] = useState(false);
-  const handleCheckboxChange = (e) => {
-    setIsSearchCheckbox(e.target.checked);
-  };
+  const handleOpenWatchwordModal = () => setIsWatchwordModalOpen(true);
+  const handleCloseWatchwordModal = () => setIsWatchwordModalOpen(false);
 
   useEffect(() => {
     const fetchHotDeals = async () => {
@@ -67,9 +73,7 @@ function Home() {
         {/* 중앙 영역 */}
         <main className="w-4/6 bg-white p-6">
           <SearchBar />
-            {/* <Checkbox className="pr-1" checked={isSearchCheckbox} onChange={handleCheckboxChange}/>검색 *정렬방식으로 바꿀예정
-          {isSearchCheckbox ? (<div><Search/></div>) : (<div></div>)} */}
-
+          <RecommendedCategories />
           <HotDealList hotDeals={hotDeals} /> 
           <Pagination 
             currentPage={currentPage} 
@@ -81,12 +85,12 @@ function Home() {
         <RightUserPanel 
           isLoggedIn={isLoggedIn}
           handleOpenLoginModal={handleOpenLoginModal}
-          handleOpenKeywordModal={handleOpenKeywordModal}
+          handleOpenWatchwordModal={handleOpenWatchwordModal}
           handleSignOut={handleSignOut}
         />
       </div>
       <LoginModal isOpen={isLoginModalOpen} onClose={handleCloseLoginModal} onSignIn={handleSignIn}/>
-      <KeywordModal isOpen={isKeywordModalOpen} onClose={handleCloseKeywordModal}/>
+      <WatchwordModal isOpen={isWatchwordModalOpen} onClose={handleCloseWatchwordModal}/>
     </div>
   );
 }

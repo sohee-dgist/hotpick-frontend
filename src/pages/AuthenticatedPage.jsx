@@ -2,23 +2,30 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import userInfo from '../data/userData'
+import testData from '../data/userData'
+import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { setUser } from '../features/userSlice';
 
 const AuthenticatedPage = () => {
 
   // testMode
-  const [isTestMode, setIsTestMode] = useState(true);
+  const isTestMode = useSelector((state) => state.config.isTestMode);
 
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const [loading, setLoading] = useState(true);
   const [errorMessage, setErrorMessage] = useState('');
 
   useEffect(() => {
     const fetchUserInfo = async () => {
       try {
-        const userData = isTestMode ? userInfo.data : (await axios.get('/api/users/my')).data;
+        // const response = await axios.get('/api/user/my');
+        const userData = isTestMode ? testData.data : (await axios.get('/api/users/my')).data.data;
 
         if (userData?.id) {
+          dispatch(setUser(userData.data));
+          // console.log(userData);
           navigate('/');
         } else {
           setErrorMessage('사용자 인증에 실패했습니다. 다시 로그인해 주세요.');
