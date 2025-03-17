@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  isTestMode: true,
+  isTestMode: false,
 };
 
 const configSlice = createSlice({

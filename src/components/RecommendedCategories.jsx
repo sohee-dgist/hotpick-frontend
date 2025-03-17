@@ -9,7 +9,7 @@ const RecommendedCategories = () => {
       {categoriesToShow.map((category) => (
         <a
           key={category.id}
-          href={category.path}
+          // href={category.path}
           className="px-4 text-white bg-blue-500 rounded-md hover:bg-blue-600"
         >
           {category.displayName}

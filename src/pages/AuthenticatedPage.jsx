@@ -1,11 +1,11 @@
 /* eslint-disable */
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
 import testData from '../data/userData'
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { setUser } from '../features/userSlice';
+import api from '../api';
 
 const AuthenticatedPage = () => {
 
@@ -20,13 +20,17 @@ const AuthenticatedPage = () => {
   useEffect(() => {
     const fetchUserInfo = async () => {
       try {
-        // const response = await axios.get('/api/user/my');
-        const userData = isTestMode ? testData.data : (await axios.get('/api/users/my')).data.data;
+        const response = isTestMode ? testData.data : (await api.get('/api/users/my')).data;
+        const userData = response.data;
 
         if (userData?.id) {
-          dispatch(setUser(userData.data));
-          // console.log(userData);
-          navigate('/');
+          dispatch(setUser(userData));
+          if (window.opener) {
+            window.opener.location.href = '/';
+            window.close();
+          } else {
+            navigate('/');
+          }
         } else {
           setErrorMessage('사용자 인증에 실패했습니다. 다시 로그인해 주세요.');
         }
@@ -39,7 +43,7 @@ const AuthenticatedPage = () => {
     };
 
     fetchUserInfo();
-  }, [navigate]);
+  }, [navigate, dispatch]);
 
   if (loading) return <div>사용자 정보를 확인 중입니다...</div>;
 
